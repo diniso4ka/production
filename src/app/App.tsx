@@ -7,8 +7,7 @@ import { useTheme } from 'app/providers/ThemeProvider'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 import { routeConfig } from 'shared/config/routeConfig/routeConfig'
-
-
+import { Navbar } from 'widgets/Navbar/ui/Navbar'
 
 
 
@@ -24,9 +23,7 @@ const App = () => {
 
    return (
       <div className={classNames('app', {}, [theme])}>
-         <button onClick={toggleTheme}>Toggle</button>
-         <Link to={'/'}>Main</Link>
-         <Link to={'/about'}>About</Link>
+         <Navbar />
          <Suspense fallback={<div>Loading...</div>}>
             <Routes>
                {Object.values(routeConfig).map(({ path, element }) =>
@@ -37,6 +34,7 @@ const App = () => {
                )}
             </Routes>
          </Suspense>
+         <button onClick={toggleTheme}>Toggle</button>
       </div>
    )
 }
