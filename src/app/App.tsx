@@ -8,7 +8,7 @@ import { useTheme } from 'app/providers/ThemeProvider'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { routeConfig } from 'shared/config/routeConfig/routeConfig'
 import { Navbar } from 'widgets/Navbar/ui/Navbar'
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ui/ThemeSwitcher'
+
 
 
 
@@ -35,7 +35,6 @@ const App = () => {
                )}
             </Routes>
          </Suspense>
-         <ThemeSwitcher />
       </div>
    )
 }
