@@ -1,1 +1,1 @@
-import ErrorBoundary from './ui/ErrorBoundary'
+import ErrorBoundary from './ui/ErrorBoundary';

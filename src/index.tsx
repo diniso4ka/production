@@ -10,9 +10,9 @@ import ErrorBoundary from 'app/providers/ErrorBoundery/ui/ErrorBoundary';
 render(
     <BrowserRouter>
         <ErrorBoundary>
-        <ThemeProvider>
-            <App />
-        </ThemeProvider>
+            <ThemeProvider>
+                <App />
+            </ThemeProvider>
         </ErrorBoundary>
     </BrowserRouter>,
     document.getElementById('root'),

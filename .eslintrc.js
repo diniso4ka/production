@@ -40,9 +40,18 @@ module.exports = {
     'i18next/no-literal-string': ['error', { markupOnly: true }],
 "no-tabs":"off",
     "react/button-has-type": "off",
-    'i18next/no-literal-string': ['error', {markupOnly:true}]
+    'i18next/no-literal-string': ['error', {markupOnly:true}],
+    "no-undef": "off",
+    "no-unused-vars":1,
+    "max-len":"off",
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off'
+    }
+  }],
 };
