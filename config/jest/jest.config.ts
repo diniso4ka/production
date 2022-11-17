@@ -35,9 +35,9 @@ export default {
     ],
     rootDir: '../../',
     testMatch: [
-        '**/__tests__/**/*.[jt]s?(x)',
-        '**/?(*.)+(spec|test).[tj]s?(x)',
-    // '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
+        // '**/__tests__/**/*.[jt]s?(x)',
+        // '**/?(*.)+(spec|test).[tj]s?(x)',
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
     ],
     modulePaths: [
         '<rootDir>src',
