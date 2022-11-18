@@ -16,20 +16,20 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     }
 
     static getDerivedStateFromError(error:Error) {
-        // Update state so the next render will show the fallback UI.
         return { hasError: true };
     }
 
     componentDidCatch(error:Error, errorInfo:ErrorInfo) {
-        // You can also log the error to an error reporting service
         console.log(error, errorInfo);
     }
 
     render() {
+        // eslint-disable-next-line react/destructuring-assignment
         if (this.state.hasError) {
             return <PageError />;
         }
 
+        // eslint-disable-next-line react/destructuring-assignment
         return this.props.children;
     }
 }

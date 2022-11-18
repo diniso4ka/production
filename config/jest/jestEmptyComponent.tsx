@@ -1,5 +1,3 @@
-const jestEmptyComponent = ()=>{
-	return <div/>
-}
+const jestEmptyComponent = () => <div />;
 
-export default  jestEmptyComponent
+export default jestEmptyComponent;

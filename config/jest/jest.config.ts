@@ -37,7 +37,7 @@ export default {
     testMatch: [
         // '**/__tests__/**/*.[jt]s?(x)',
         // '**/?(*.)+(spec|test).[tj]s?(x)',
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     modulePaths: [
         '<rootDir>src',
@@ -47,7 +47,7 @@ export default {
 
     moduleNameMapper: {
         '\\.(scss)$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname,'jestEmptyComponent.tsx')
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
 
     // Indicates whether the coverage information should be collected while executing the test
