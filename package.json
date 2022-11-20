@@ -64,6 +64,7 @@
     "identity-obj-proxy": "^3.0.0",
     "loki": "^0.30.3",
     "mini-css-extract-plugin": "^2.5.3",
+    "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.13.10",
     "sass": "^1.54.9",
     "sass-loader": "^12.6.0",
