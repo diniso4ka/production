@@ -56,3 +56,17 @@ OutlinedDark.args = {
 };
 
 OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Switcher = Template.bind({});
+Switcher.args = {
+    theme: ThemeButton.SWITCHER,
+    children: '>',
+};
+
+export const SwitcherDark = Template.bind({});
+SwitcherDark.args = {
+    theme: ThemeButton.SWITCHER,
+    children: '>',
+};
+
+SwitcherDark.decorators = [ThemeDecorator(Theme.DARK)];
