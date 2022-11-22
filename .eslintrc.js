@@ -44,12 +44,14 @@ module.exports = {
         'max-len': 'off',
         'no-restricted-globals': 'off',
         'import/order': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
     },
     globals: {
         __IS_DEV__: true,
     },
     overrides: [{
-        files: ['**/src/**/*.test.{ts,tsx}'],
+        files: ['**/src/**/*.test.{ts,tsx,stories}'],
         rules: {
             'i18next/no-literal-string': 'off',
         },

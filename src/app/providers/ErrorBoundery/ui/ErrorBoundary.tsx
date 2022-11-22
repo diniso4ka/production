@@ -1,4 +1,6 @@
-import { ReactNode, Component, ErrorInfo } from 'react';
+import {
+    ReactNode, Component, ErrorInfo, Suspense,
+} from 'react';
 import { PageError } from 'widgets/PageError/ui/PageError';
 
 interface ErrorBoundaryProps{
@@ -26,7 +28,11 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     render() {
         // eslint-disable-next-line react/destructuring-assignment
         if (this.state.hasError) {
-            return <PageError />;
+            return (
+                <Suspense fallback="">
+                    <PageError />
+                </Suspense>
+            );
         }
 
         // eslint-disable-next-line react/destructuring-assignment
