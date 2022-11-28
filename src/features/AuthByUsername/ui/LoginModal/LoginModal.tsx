@@ -10,7 +10,7 @@ className?: string
 }
 
 export const LoginModal: FC<LoginModalProps> = ({ className, isOpen, onClose }) => (
-    <Modal lazy isOpen={isOpen} onClose={onClose} className={classNames(cls.LoginModal, {}, [className])}>
+    <Modal lazy isOpen={isOpen} onClose={onClose} className={classNames('', {}, [className])}>
         <LoginForm />
     </Modal>
 );
