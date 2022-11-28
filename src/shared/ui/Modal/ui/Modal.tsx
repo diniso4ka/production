@@ -1,5 +1,5 @@
 import {
-    FC, ReactNode, MouseEvent, useEffect, useCallback,
+    FC, ReactNode, MouseEvent, useEffect, useCallback, useState,
 } from 'react';
 import cls from './Modal.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -11,12 +11,14 @@ interface ModalProps{
 	children:ReactNode,
 	isOpen?: boolean
 	onClose?: ()=> void
+    lazy?: boolean
 }
 
 export const Modal: FC<ModalProps> = ({
-    className, children, isOpen, onClose,
+    className, children, isOpen, onClose, lazy = false,
 }) => {
     const { theme } = useTheme();
+    const [isMounted, setIsMounted] = useState(false);
     const mods:Record<string, boolean> = {
         [cls.opened]: isOpen,
     };
@@ -33,12 +35,24 @@ export const Modal: FC<ModalProps> = ({
 
     useEffect(() => {
         if (isOpen) {
+            setIsMounted(true);
+        } else {
+            setIsMounted(false);
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [onKeyDown, isOpen]);
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>
