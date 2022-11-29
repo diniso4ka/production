@@ -1,6 +1,15 @@
 {
-   "Перевод": "ENG",
-   "Основная страница": "Main",
-   "О сайте": "About site",
-   "Загрузка": "Loading..."
+   "Language": "ENG",
+   "Main page": "Main",
+   "About page": "About site",
+   "Loading": "Loading...",
+   "Sign In": "Sign In",
+   "Not found": "Not found",
+   "Reload": "Reload",
+   "Error": "Error",
+   "Enter username": "Enter username",
+   "Enter password": "Enter password",
+   "Authorization form": "Authorization form",
+   "Your email or password is incorrect":"Your email or password is incorrect",
+   "Log Out":"Log Out"
 }

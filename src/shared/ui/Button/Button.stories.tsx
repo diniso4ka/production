@@ -85,3 +85,17 @@ SwitcherDark.args = {
 };
 
 SwitcherDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'Button',
+    disabled: true,
+};
+
+export const DisabledDark = Template.bind({});
+DisabledDark.args = {
+    children: 'Button',
+    disabled: true,
+};
+
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];

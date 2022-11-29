@@ -29,13 +29,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 <AppLink className={cls.linkBlock} theme={AppLinkTheme.SECONDARY} to="/">
                     <HomeIcon className={cls.icon} />
                     <span className={cls.linkTitle}>
-                        {t('Основная страница')}
+                        {t('Main page')}
                     </span>
                 </AppLink>
 
                 <AppLink className={cls.linkBlock} theme={AppLinkTheme.SECONDARY} to="/about">
                     <AboutIcon className={cls.icon} />
-                    <span className={cls.linkTitle}>{t('О сайте')}</span>
+                    <span className={cls.linkTitle}>{t('About page')}</span>
                 </AppLink>
 
             </div>

@@ -16,8 +16,8 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
-            <p>{t('Произошла ошибка')}</p>
-            <Button onClick={onClickReboot}>{t('Перезагрузить')}</Button>
+            <p>{t('Error')}</p>
+            <Button onClick={onClickReboot}>{t('Reload')}</Button>
         </div>
     );
 };

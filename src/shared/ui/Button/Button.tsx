@@ -12,6 +12,7 @@ export enum ThemeButton {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    className?: string,
    theme?: ThemeButton
+    disabled?:boolean
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -19,11 +20,13 @@ export const Button: FC<ButtonProps> = (props) => {
         className,
         children,
         theme,
+        disabled,
         ...otherProps
     } = props;
     return (
         <button
-            className={classNames(cls.Button, {}, [className, cls[theme]])}
+            disabled={disabled}
+            className={classNames(cls.Button, { [cls.disabled]: disabled }, [className, cls[theme]])}
             {...otherProps}
         >
             {children}
