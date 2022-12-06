@@ -24,10 +24,6 @@ export default {
     coveragePathIgnorePatterns: [
         '\\\\node_modules\\\\',
     ],
-    moduleDirectories: [
-        'node_modules',
-    ],
-
     moduleFileExtensions: [
         'js',
         'jsx',
@@ -36,20 +32,19 @@ export default {
         'json',
         'node',
     ],
-    rootDir: '../../',
-    testMatch: [
-        // '**/__tests__/**/*.[jt]s?(x)',
-        // '**/?(*.)+(spec|test).[tj]s?(x)',
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    moduleDirectories: [
+        'node_modules',
     ],
     modulePaths: [
         '<rootDir>src',
     ],
-
+    testMatch: [
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    ],
+    rootDir: '../../',
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
-
     moduleNameMapper: {
-        '\\.(scss)$': 'identity-obj-proxy',
+        '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
 
