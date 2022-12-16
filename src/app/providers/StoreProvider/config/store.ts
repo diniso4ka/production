@@ -2,7 +2,6 @@ import { configureStore, DeepPartial, ReducersMapObject } from '@reduxjs/toolkit
 import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
-import { loginReducer } from 'features/AuthByUsername';
 import thunkMiddleware from 'redux-thunk';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 
@@ -27,3 +26,5 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?:Redu
 
     return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']

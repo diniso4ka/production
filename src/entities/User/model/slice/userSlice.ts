@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserSchema } from 'entities/User/model/types/user';
+import { UserSchema } from '../types/user';
 import { USER_LOCALSTORAGE_KEY } from 'shared/consts/localStorage';
 
 const initialState:UserSchema = {

@@ -15,6 +15,10 @@
     gap: 20px;
 }
 
+.lang {
+    margin-left: 20px;
+}
+
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
@@ -22,9 +26,8 @@
         flex-direction: column;
     }
 
-    .linkTitle {
-        display: none;
-        white-space: nowrap;
+    .lang {
+        margin-left: 0;
     }
 }
 
@@ -33,26 +36,11 @@
     flex-direction: column;
     margin: 25px 0 0 25px;
     overflow: hidden;
-
-    .linkBlock {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        min-width: fit-content;
-
-        .linkTitle {
-            white-space: nowrap;
-        }
-    }
 }
 
 .icon {
     fill: var(--inverted-secondary-color);
     margin-right: 10px;
-}
-
-.lang {
-    margin-left: 20px;
 }
 
 .button {

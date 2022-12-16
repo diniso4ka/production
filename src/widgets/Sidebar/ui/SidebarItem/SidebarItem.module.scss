@@ -1,0 +1,22 @@
+.linkBlock {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    min-width: fit-content;
+
+    .linkTitle {
+        white-space: nowrap;
+    }
+}
+
+.icon {
+    fill: var(--inverted-secondary-color);
+    margin-right: 10px;
+}
+
+.collapsed {
+    .linkTitle {
+        display: none;
+        white-space: nowrap;
+    }
+}
