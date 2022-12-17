@@ -16,7 +16,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/tests/hoocks/useAppDispatch/useAppDispatch';
 
 export interface LoginFromProps{
-className?: string
+    className?: string
     onSuccess:()=>void
 }
 
@@ -39,6 +39,7 @@ const LoginForm: FC<LoginFromProps> = ({ className, onSuccess }) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
     const onLoginClick = useCallback(async () => {
+        // @ts-ignore
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();

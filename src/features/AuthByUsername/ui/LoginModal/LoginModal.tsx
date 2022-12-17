@@ -7,7 +7,7 @@ import { Loader } from 'shared/ui/Loader';
 interface LoginModalProps{
 className?: string
 	isOpen?:boolean,
-	onClose?:()=>void
+	onClose:()=>void
 }
 
 export const LoginModal: FC<LoginModalProps> = ({ className, isOpen, onClose }) => (

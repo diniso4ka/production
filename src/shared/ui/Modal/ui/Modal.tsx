@@ -2,7 +2,7 @@ import {
     FC, ReactNode, MouseEvent, useEffect, useCallback, useState,
 } from 'react';
 import cls from './Modal.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
 
@@ -19,13 +19,14 @@ export const Modal: FC<ModalProps> = ({
 }) => {
     const { theme } = useTheme();
     const [isMounted, setIsMounted] = useState(false);
-    const mods:Record<string, boolean> = {
+
+    const mods:Mods = {
         [cls.opened]: isOpen,
     };
 
     const onKeyDown = useCallback((e:KeyboardEvent) => {
         if (e.key === 'Escape') {
-            onClose();
+            onClose?.();
         }
     }, [onClose]);
 

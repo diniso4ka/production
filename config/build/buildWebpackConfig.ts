@@ -9,7 +9,9 @@ import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
 
 export function buildWebpackConfiguration(options: BuildOptions) {
-    const { paths, mode, isDev } = options;
+    const {
+        paths, mode, isDev, apiUrl,
+    } = options;
 
     return {
         mode,
