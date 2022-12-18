@@ -1,15 +1,21 @@
 import { FC, useCallback, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
-    profileReducer, fetchProfileData, ProfileCard, getProfileError,
-    getProfileData, getProfileStatus, profileActions, getProfileReadonly,
+    fetchProfileData,
+    getProfileError,
+    getProfileReadonly,
+    getProfileStatus,
+    profileActions,
+    ProfileCard,
+    profileReducer,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/tests/hoocks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 
 const initialState:ReducersList = {
     profile: profileReducer,
@@ -37,6 +43,18 @@ const ProfilePage: FC = () => {
     const onChangeCity = useCallback((value?:string) => {
         dispatch(profileActions.updateProfile({ city: value || '' }));
     }, [dispatch]);
+    const onChangeUsername = useCallback((value?:string) => {
+        dispatch(profileActions.updateProfile({ username: value || '' }));
+    }, [dispatch]);
+    const onChangeAvatar = useCallback((value?:string) => {
+        dispatch(profileActions.updateProfile({ avatar: value || '' }));
+    }, [dispatch]);
+    const onChangeCurrency = useCallback((currency?:Currency) => {
+        dispatch(profileActions.updateProfile({ currency }));
+    }, [dispatch]);
+    const onChangeCountry = useCallback((country?:Country) => {
+        dispatch(profileActions.updateProfile({ country }));
+    }, [dispatch]);
     return (
         <DynamicModuleLoader reducers={initialState} removeAfterUnmount>
             <ProfilePageHeader />
@@ -49,6 +67,10 @@ const ProfilePage: FC = () => {
                 onChangeLastname={onChangeLastname}
                 onChangeAge={onChangeAge}
                 onChangeCity={onChangeCity}
+                onChangeUsername={onChangeUsername}
+                onChangeAvatar={onChangeAvatar}
+                onChangeCurrency={onChangeCurrency}
+                onChangeCountry={onChangeCountry}
             />
         </DynamicModuleLoader>
     );

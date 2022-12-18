@@ -37,7 +37,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': ['warn', { markupOnly: true }],
         'no-tabs': 'off',
         'react/button-has-type': 'off',
         'no-undef': 'off',
