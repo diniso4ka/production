@@ -3,9 +3,9 @@ import { StateSchema, ThunkExtraArg } from 'app/providers/StoreProvider/config/S
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
-import { $api } from 'shared/api/api';
+import { api } from 'shared/api/api';
+import { To } from 'history';
 import { NavigateOptions } from 'react-router';
-import { To } from 'react-router-dom';
 import { CombinedState } from 'redux';
 
 export function createReduxStore(
@@ -22,7 +22,7 @@ export function createReduxStore(
     const reducerManager = createReducerManager(rootReducers);
 
     const extraArg:ThunkExtraArg = {
-        api: $api,
+        api,
         navigate,
     };
 
@@ -33,7 +33,7 @@ export function createReduxStore(
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({
             thunk: {
                 extraArgument: {
-                    extraArg,
+                    ...extraArg,
                 },
             },
         }),

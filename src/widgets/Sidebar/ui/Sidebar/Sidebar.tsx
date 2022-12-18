@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import cls from './Sidebar.module.scss';
 
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { SidebarItemsList } from '../../model/items';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

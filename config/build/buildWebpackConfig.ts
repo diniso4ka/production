@@ -10,7 +10,7 @@ import { buildDevServer } from './buildDevServer';
 
 export function buildWebpackConfiguration(options: BuildOptions) {
     const {
-        paths, mode, isDev, apiUrl,
+        paths, mode, isDev,
     } = options;
 
     return {

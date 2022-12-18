@@ -1,17 +1,26 @@
 {
   "posts": [
-	{ "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "users": [
-	{ "id": 1, "username": "admin", "password": "123" }
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
+    }
   ],
   "profile": {
-	"first": "Денис",
-	"lastname": "Рональдо",
-	"username": "admin",
-	"age": 21,
-	"currency": "RUB",
-	"country": "Russia",
-	"city": "Sochi",
-	"avatar": "https://muzhzhena.ru/wp-content/uploads/2022/02/snimok-ekrana-2022-02-01-v-18.45.09.jpg"
-}}
+    "first": "Денис",
+    "lastname": "Рональдо",
+    "username": "admin",
+    "age": 21,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Sochi",
+    "avatar": "https://muzhzhena.ru/wp-content/uploads/2022/02/snimok-ekrana-2022-02-01-v-18.45.09.jpg"
+  }
+}

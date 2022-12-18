@@ -1,11 +1,11 @@
-import { FC, useCallback, useEffect } from 'react';
+import { FC, useCallback } from 'react';
 import cls from './LoginForm.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { Input } from 'shared/ui/Input/ui/Input';
+import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/LoginByUsername/LoginByUsername';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
@@ -39,7 +39,6 @@ const LoginForm: FC<LoginFromProps> = ({ className, onSuccess }) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
     const onLoginClick = useCallback(async () => {
-        // @ts-ignore
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();

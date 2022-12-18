@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ProfileSchema, ProfileType } from '../types/profile';
 import { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData';
+import { updateProfileData } from 'entities/Profile/model/services/updateProfileData/updateProfileData';
 
 const initialState:ProfileSchema = {
     readonly: true,
@@ -13,6 +14,16 @@ export const profileSlice = createSlice({
     name: 'profile',
     initialState,
     reducers: {
+        setReadonly: (state) => {
+            state.readonly = false;
+        },
+        cancelEdit: (state) => {
+            state.readonly = true;
+            state.form = state.data;
+        },
+        updateProfile: (state, action:PayloadAction<ProfileType>) => {
+            state.form = { ...state.form, ...action.payload };
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchProfileData.pending, (state, action) => {
@@ -22,8 +33,23 @@ export const profileSlice = createSlice({
             .addCase(fetchProfileData.fulfilled, (state, action:PayloadAction<ProfileType>) => {
                 state.isLoading = false;
                 state.data = action.payload;
+                state.form = action.payload;
             })
             .addCase(fetchProfileData.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = 'error';
+            })
+            .addCase(updateProfileData.pending, (state, action) => {
+                state.isLoading = true;
+                state.error = undefined;
+            })
+            .addCase(updateProfileData.fulfilled, (state, action:PayloadAction<ProfileType>) => {
+                state.isLoading = false;
+                state.data = action.payload;
+                state.form = action.payload;
+                state.readonly = true;
+            })
+            .addCase(updateProfileData.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = 'error';
             });
