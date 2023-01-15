@@ -20,6 +20,7 @@ export function buildWebpackConfiguration(options: BuildOptions) {
             filename: '[name].js',
             path: paths.build,
             clean: true,
+            // publicPath: '/',
         },
         plugins: buildPlugins(options),
         module: {
