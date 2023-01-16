@@ -7,8 +7,7 @@ import {
 import { CombinedState } from 'redux';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { To } from 'history';
-import { NavigateOptions } from 'react-router';
+import { ArticleDetailsSchema } from 'entities/Article';
 
 export interface StateSchema {
 	counter: CounterSchema,
@@ -17,6 +16,7 @@ export interface StateSchema {
 	// async
 	loginForm?: LoginSchema
 	profile?: ProfileSchema
+	articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
@@ -34,7 +34,6 @@ reducerManager:ReducerManager
 
 export interface ThunkExtraArg {
 	api: AxiosInstance;
-	navigate?: (to: To, options?: NavigateOptions) => void,
 }
 
 export interface ThunkConfig<T> {
