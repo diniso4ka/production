@@ -27,8 +27,7 @@ const initialState:ReducersList = {
 export const ArticleDetails = memo(({ className, id }:ArticleDetailsProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation('article-details');
-    // const isLoading = useSelector(getArticleDetailsIsLoading);
-    const isLoading = true;
+    const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
 
